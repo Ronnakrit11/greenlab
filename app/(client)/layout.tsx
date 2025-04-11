@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -11,6 +11,12 @@ const raleway = localFont({
   variable: "--font-raleway",
   weight: "100 900",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "Capsoul COFFEE | Premium Coffee Capsules",
@@ -42,11 +48,6 @@ export const metadata: Metadata = {
     description: "Experience premium imported coffee capsules with Capsoul COFFEE. We offer high-quality coffee capsules for an exceptional brewing experience.",
     images: ["/logo.png"],
     creator: "@Capsoulcoffee",
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
   },
   verification: {
     google: "google-site-verification-code", // Replace with actual Google verification code

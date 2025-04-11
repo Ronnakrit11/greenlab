@@ -15,6 +15,27 @@ if (!TELEGRAM_CHAT_ID) {
 // Initialize bot without polling
 const bot = TELEGRAM_BOT_TOKEN ? new TelegramBot(TELEGRAM_BOT_TOKEN, { polling: false }) : null;
 
+// Helper function to validate chat ID
+function validateAndFormatChatId(chatId: string | undefined): string | null {
+  if (!chatId) return null;
+  
+  // Remove any whitespace
+  chatId = chatId.trim();
+  
+  // Ensure it starts with a minus sign for group chats
+  if (!chatId.startsWith('-')) {
+    chatId = `-${chatId}`;
+  }
+  
+  // Validate that it's a valid number
+  if (!/^-?\d+$/.test(chatId)) {
+    console.error('Invalid chat ID format');
+    return null;
+  }
+  
+  return chatId;
+}
+
 export async function sendOrderNotification(orderData: {
   orderNumber: string;
   customerName: string;
@@ -24,9 +45,15 @@ export async function sendOrderNotification(orderData: {
   totalAmount: number;
   items: Array<{ name: string; quantity: number; price: number }>;
 }) {
-  // If bot is not initialized, skip notification
+  // If bot is not initialized or chat ID is missing, skip notification
   if (!bot || !TELEGRAM_CHAT_ID) {
-    console.log('Telegram notifications are disabled');
+    console.log('Telegram notifications are disabled - missing configuration');
+    return;
+  }
+
+  const validChatId = validateAndFormatChatId(TELEGRAM_CHAT_ID);
+  if (!validChatId) {
+    console.error('Invalid Telegram chat ID format');
     return;
   }
 
@@ -44,25 +71,39 @@ export async function sendOrderNotification(orderData: {
 *Address:* ${orderData.address}
 
 *Items:*
-${orderData.items.map(item => `• ${item.name} x${item.quantity} ($${item.price})`).join('\n')}
+${orderData.items.map(item => `• ${item.name} x${item.quantity} (${item.price} THB)`).join('\n')}
 
-*Total Amount:* ${orderData.totalAmount.toFixed(2)} บาท
+*Total Amount:* ${orderData.totalAmount.toFixed(2)} THB
 
 *Payment Method:* Cash on Delivery (COD)
 *Status:* Pending
     `;
 
-    await bot.sendMessage(TELEGRAM_CHAT_ID, message, {
+    // First try to get chat information
+    try {
+      await bot.getChat(validChatId);
+    } catch (chatError: any) {
+      console.error('Failed to get chat information:', {
+        error: chatError.message,
+        description: chatError.response?.body?.description
+      });
+      return;
+    }
+
+    // Send the message
+    await bot.sendMessage(validChatId, message, {
       parse_mode: 'Markdown',
       disable_web_page_preview: true
     });
     
     console.log('Telegram notification sent successfully');
-  } catch (error) {
-    // More detailed error logging
-    console.error('Error sending Telegram notification:', {
-      error: error,
-      chatId: TELEGRAM_CHAT_ID,
+  } catch (error: any) {
+    // Log error details but don't throw
+    console.error('Failed to send Telegram notification:', {
+      error: error.message,
+      code: error.code,
+      description: error.response?.body?.description,
+      chatId: validChatId
     });
     
     // Don't throw the error to prevent order creation failure
