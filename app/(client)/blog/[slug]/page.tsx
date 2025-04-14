@@ -4,11 +4,33 @@ import { urlFor } from "@/sanity/lib/image";
 import { formatInTimeZone } from "date-fns-tz";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { PortableText } from "@portabletext/react";
+import { PortableText, PortableTextReactComponents } from "@portabletext/react";
+import React from "react";
 
-const components = {
+interface ImageValue {
+  _type: string;
+  asset: {
+    _ref: string;
+    _type: string;
+  };
+  alt?: string;
+  caption?: string;
+}
+
+interface BlogData {
+  _id: string;
+  title: string;
+  subtitle?: string;
+  author: string;
+  publishedAt: string;
+  mainImage: ImageValue;
+  body: any[]; // PortableText content is complex, using any[] is acceptable here
+}
+
+// Define components with proper types
+const components: Partial<PortableTextReactComponents> = {
   types: {
-    image: ({ value }: any) => {
+    image: ({ value }) => {
       return (
         <div className="relative w-full h-96 my-8">
           <Image
@@ -27,19 +49,19 @@ const components = {
     },
   },
   block: {
-    h1: ({children}: any) => <h1 className="text-4xl font-bold mt-8 mb-4">{children}</h1>,
-    h2: ({children}: any) => <h2 className="text-3xl font-bold mt-8 mb-4">{children}</h2>,
-    h3: ({children}: any) => <h3 className="text-2xl font-bold mt-6 mb-4">{children}</h3>,
-    h4: ({children}: any) => <h4 className="text-xl font-bold mt-6 mb-4">{children}</h4>,
-    blockquote: ({children}: any) => (
+    h1: ({children}) => <h1 className="text-4xl font-bold mt-8 mb-4">{children}</h1>,
+    h2: ({children}) => <h2 className="text-3xl font-bold mt-8 mb-4">{children}</h2>,
+    h3: ({children}) => <h3 className="text-2xl font-bold mt-6 mb-4">{children}</h3>,
+    h4: ({children}) => <h4 className="text-xl font-bold mt-6 mb-4">{children}</h4>,
+    blockquote: ({children}) => (
       <blockquote className="border-l-4 border-primary pl-4 italic my-6">
         {children}
       </blockquote>
     ),
-    normal: ({children}: any) => <p className="mb-4 leading-relaxed">{children}</p>,
+    normal: ({children}) => <p className="mb-4 leading-relaxed">{children}</p>,
   },
   marks: {
-    link: ({children, value}: any) => {
+    link: ({children, value}) => {
       return (
         <a 
           href={value?.href} 
@@ -54,7 +76,7 @@ const components = {
   },
 };
 
-async function getBlogBySlug(slug: string) {
+async function getBlogBySlug(slug: string): Promise<BlogData | null> {
   try {
     const query = `*[_type == "blog" && slug.current == $slug][0]`;
     const blog = await client.fetch(query, { slug });
@@ -65,11 +87,7 @@ async function getBlogBySlug(slug: string) {
   }
 }
 
-export default async function BlogPost({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const blog = await getBlogBySlug(params.slug);
 
   if (!blog) {
