@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import localFont from "next/font/local";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const raleway = localFont({
   src: "../fonts/Raleway.woff2",
@@ -62,12 +63,19 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body className={`${raleway.variable} antialiased`}>
-          <Header />
-          {children}
-          <Footer />
-          <Toaster position="bottom-right" theme="dark" />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
+            {children}
+            <Footer />
+            <Toaster position="bottom-right" theme="dark" />
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
