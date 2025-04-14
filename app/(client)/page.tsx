@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import HomeBanner from "@/components/HomeBanner";
 import ProductGrid from "@/components/ProductGrid";
 import BannerSlider from "@/components/BannerSlider";
+import BlogSection from "@/components/BlogSection";
 import { getActiveBanners } from "@/sanity/helpers/queries";
 
 export default async function Home() {
@@ -15,6 +16,7 @@ export default async function Home() {
           <HomeBanner />
           <ProductGrid />
         </div>
+        <BlogSection />
       </Container>
     </div>
   );
