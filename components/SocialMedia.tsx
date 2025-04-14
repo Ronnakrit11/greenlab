@@ -19,7 +19,7 @@ const socialLink = [
 
   {
     title: "Facebook",
-    href: "https://www.facebook.com/Capsoulcoffee",
+    href: "https://www.facebook.com/Medicancoffee",
     icon: <Facebook className="w-5 h-5" />,
   },
 

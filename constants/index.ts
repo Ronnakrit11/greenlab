@@ -32,27 +32,27 @@ export const categoriesData = [
 ];
 export const faqsData = [
   {
-    question: "What services does Capsoul offer?",
+    question: "What services does Medican offer?",
     answer:
-      "Capsoul offers a wide range of technology solutions including custom software development, cloud services, and digital transformation consulting.",
+      "Medican offers a wide range of technology solutions including custom software development, cloud services, and digital transformation consulting.",
   },
   {
-    question: "How can I get support for Capsoul products?",
+    question: "How can I get support for Medican products?",
     answer:
-      "You can reach our support team through our contact page or by emailing support@Capsoul.com.",
+      "You can reach our support team through our contact page or by emailing support@Medican.com.",
   },
   {
-    question: "Does Capsoul offer training for its products?",
+    question: "Does Medican offer training for its products?",
     answer:
       "Yes, we offer comprehensive training programs for all our products and services. Please contact our sales team for more information.",
   },
   {
-    question: "What industries does Capsoul serve?",
+    question: "What industries does Medican serve?",
     answer:
-      "Capsoul serves a wide range of industries including finance, healthcare, retail, and manufacturing.",
+      "Medican serves a wide range of industries including finance, healthcare, retail, and manufacturing.",
   },
   {
-    question: "How does Capsoul ensure data security?",
+    question: "How does Medican ensure data security?",
     answer:
       "We employ industry-standard security measures and comply with all relevant data protection regulations to ensure the security of our clients' data.",
   },
