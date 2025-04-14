@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Logo />
             <p className="text-gray-600 text-sm">
-            Where Luxurious Dreams Meet Premium Imported Coffee Capsule, Transforming Every Night into an Experience of Pure Comfort and Tranquility&quot;
+            Where Luxurious Dreams Meet Premium Imported Cannabis, Transforming Every Night into an Experience of Pure Comfort and Tranquility&quot;
             </p>
             <SocialMedia
               className="text-darkColor/60"
@@ -55,7 +55,7 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-darkColor mb-4">Contact</h3>
             <p className="text-gray-600 text-sm mb-4">
-            T. F. I COFFEE CO., LTD. 340 1 Samakkhi Rd, Tambon Tha Sai, Mueang Nonthaburi District, Chang Wat Nonthaburi 11000
+              Rd, Tambon ,  phuket District, thailand
             </p>
             <form className="space-y-3">
               <Input

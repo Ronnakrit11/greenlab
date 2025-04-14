@@ -81,8 +81,8 @@ export const productType = defineType({
       type: "string",
       options: {
         list: [
-          { title: "10 Capsules", value: "10-capsules" },
-          { title: "80 Capsules", value: "80-capsules" },
+          { title: "Hybrid", value: "hybrid" },
+          { title: "Indica-Hybrid", value: "indica-hybrid" },
         ],
       },
     }),

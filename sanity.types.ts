@@ -136,7 +136,7 @@ export type Product = {
   }>;
   stock?: number;
   status?: "new" | "hot" | "sale";
-  variant?: "10-capsules" | "80-capsules";
+  variant?: "hybrid" | "indica-hybrid";
 };
 
 export type Category = {
@@ -262,7 +262,7 @@ export type PRODUCT_BY_SLUG_QUERYResult = {
   }>;
   stock?: number;
   status?: "hot" | "new" | "sale";
-  variant?: "10-capsules" | "80-capsules";
+  variant?: "hybrid" | "indica-hybrid";
 } | null;
 // Variable: CATEGORIES_QUERY
 // Query: *[_type=="category"] | order(name asc)
@@ -341,7 +341,7 @@ export type MY_ORDERS_QUERYResult = Array<{
       }>;
       stock?: number;
       status?: "hot" | "new" | "sale";
-      variant?: "10-capsules" | "80-capsules";
+      variant?: "hybrid" | "indica-hybrid";
     } | null;
     quantity?: number;
     _key: string;

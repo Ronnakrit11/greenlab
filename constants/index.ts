@@ -1,15 +1,15 @@
 export const headerData = [
   { title: "Home", href: "/" },
-  { title: "ใหญ่", href: "/category/big" },
-  { title: "เล็ก", href: "/category/small" },
+  { title: "hybrid", href: "/category/hybrid" },
+  { title: "indica-hybrid", href: "/category/indica-hybrid" },
 
   { title: "บทความ", href: "/" },
   { title: "ติดต่อ", href: "/contact" },
 ];
 
 export const productType = [
-  { title: "10-capsules", value: "10-capsules" },
-  { title: "80-capsules", value: "80-capsules" },
+  { title: "hybrid", value: "hybrid" },
+  { title: "indica-hybrid", value: "indica-hybrid" },
 ];
 
 export const quickLinksData = [
@@ -24,8 +24,8 @@ export const categoriesData = [
   { title: "Big", href: "/big" },
   { title: "Small", href: "/small" },
 
-  { title: "10-capsule", href: "/small" },
-  { title: "80-capsule", href: "/big" },
+  { title: "Hybrid", href: "/hybrid" },
+  { title: "Indica-Hybrid", href: "/indica-hybrid" },
   
 
   { title: "Others", href: "/others" },
