@@ -20,9 +20,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Medican Cannabis | Premium Coffee Capsules",
-  description: "Experience premium imported coffee capsules with Medican Cannabis. We offer high-quality coffee capsules for an exceptional brewing experience.",
-  keywords: "coffee capsules, premium coffee, imported coffee, Medican Cannabis, coffee pods",
+  title: "Medican Cannabis | Premium Cannabis Phuket",
+  description: "Experience premium Cannabis with Medican Cannabis. We offer high-quality Cannabis for an exceptional brewing experience.",
+  keywords: " premium Cannabis, Cannabis phuket, premium Cannabis phuket, Medican Cannabis, Premium weed phuket",
   authors: [{ name: "Medican Cannabis" }],
   creator: "Medican Cannabis",
   publisher: "Medican Cannabis",
@@ -30,10 +30,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "th_THAI",
-    url: "https://Capsoul.online",
-    siteName: "TFI COFFEE",
-    title: "Medican Cannabis | Premium Coffee Capsules",
-    description: "Experience premium imported coffee capsules with Medican Cannabis. We offer high-quality coffee capsules for an exceptional brewing experience.",
+    url: "https://www.medican.shop",
+    siteName: "Medican",
+    title: "Medican Cannabis Phuket | Premium Cannabis Phuket",
+    description: "Experience premium Cannabis with Medican Cannabis. We offer high-quality Cannabis for an exceptional brewing experience.",
     images: [
       {
         url: "/logo.png",
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Medican Cannabis | Premium Coffee Capsules",
-    description: "Experience premium imported coffee capsules with Medican Cannabis. We offer high-quality coffee capsules for an exceptional brewing experience.",
+    description: "Experience premium Cannabis with Medican Cannabis. We offer high-quality Cannabis for an exceptional brewing experience.",
     images: ["/logo.png"],
-    creator: "@Capsoulcoffee",
+    creator: "@MedicanShop",
   },
   verification: {
     google: "google-site-verification-code", // Replace with actual Google verification code
