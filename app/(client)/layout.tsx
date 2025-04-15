@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Medican Cannabis | Premium Coffee Capsules",
+    title: "Medican Cannabis | Premium Cannabis Phuket",
     description: "Experience premium Cannabis with Medican Cannabis. We offer high-quality Cannabis for an exceptional brewing experience.",
     images: ["/logo.png"],
     creator: "@MedicanShop",
