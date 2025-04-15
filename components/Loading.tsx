@@ -1,24 +1,30 @@
 "use client";
 import Logo from "./Logo";
 import { motion } from "motion/react";
-import { Loader2 } from "lucide-react";
 
 const Loading = () => {
   return (
-    <div className="fixed min-h-screen w-full bg-white left-0 top-0 flex items-center justify-center">
-      <div className="flex flex-col justify-center items-center gap-1">
-        <Logo>Medican</Logo>
+    <div className="fixed min-h-screen w-full bg-background left-0 top-0 flex items-center justify-center">
+      <motion.div 
+        className="flex flex-col items-center gap-4"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <motion.div
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="flex items-center space-x-2 text-green-800"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            rotate: [0, 10, -10, 0]
+          }}
+          transition={{ 
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
         >
-          <Loader2 className=" animate-spin" />
-          <span className="font-semibold tracking-wide">
-            Medican is loading...
-          </span>
+          <Logo className="h-16 md:h-20" />
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 };

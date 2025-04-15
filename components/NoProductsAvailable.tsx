@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Loader2 } from "lucide-react";
+import Logo from "./Logo";
 
 const NoProductsAvailable = ({
   selectedTab,
@@ -39,12 +39,17 @@ const NoProductsAvailable = ({
         criteria at the moment.
       </motion.p>
       <motion.div
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-        className="flex items-center space-x-2 text-blue-600"
+        animate={{ 
+          scale: [1, 1.2, 1],
+          rotate: [0, 10, -10, 0]
+        }}
+        transition={{ 
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
       >
-        <Loader2 className="w-4 h-4 animate-spin" />{" "}
-        <span>We&apos;re restocking shortly</span>
+        <Logo className="h-12" />
       </motion.div>
       <motion.p
         initial={{ opacity: 0 }}
