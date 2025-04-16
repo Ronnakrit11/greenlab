@@ -10,9 +10,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Languages } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function LanguageToggle() {
   const { currentLanguage, setLanguage } = useLanguageStore();
+  const { i18n } = useTranslation();
 
   const languages = [
     { code: 'en', label: 'English' },
@@ -20,8 +22,20 @@ export function LanguageToggle() {
     { code: 'ru', label: 'Русский' }
   ];
 
-  const getCurrentLanguageLabel = () => {
-    return languages.find(lang => lang.code === currentLanguage)?.label || 'English';
+  React.useEffect(() => {
+    // Sync initial language with store
+    if (currentLanguage) {
+      i18n.changeLanguage(currentLanguage);
+    }
+  }, []);
+
+  const handleLanguageChange = async (langCode: 'en' | 'th' | 'ru') => {
+    try {
+      await i18n.changeLanguage(langCode);
+      setLanguage(langCode);
+    } catch (error) {
+      console.error('Failed to change language:', error);
+    }
   };
 
   return (
@@ -36,7 +50,7 @@ export function LanguageToggle() {
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setLanguage(lang.code as 'en' | 'th' | 'ru')}
+            onClick={() => handleLanguageChange(lang.code as 'en' | 'th' | 'ru')}
             className={currentLanguage === lang.code ? "bg-accent" : ""}
           >
             {lang.label}

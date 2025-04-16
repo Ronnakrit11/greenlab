@@ -3,21 +3,30 @@
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import resourcesToBackend from 'i18next-resources-to-backend';
+
+// Import translations directly
+import enTranslations from './locales/en.json';
+import thTranslations from './locales/th.json';
+import ruTranslations from './locales/ru.json';
 
 i18next
   .use(initReactI18next)
   .use(LanguageDetector)
-  .use(resourcesToBackend((language: string) => import(`./locales/${language}.json`)))
   .init({
-    lng: 'en',
+    resources: {
+      en: { translation: enTranslations },
+      th: { translation: thTranslations },
+      ru: { translation: ruTranslations }
+    },
     fallbackLng: 'en',
     supportedLngs: ['en', 'th', 'ru'],
+    lng: 'en', // Default language
     interpolation: {
       escapeValue: false,
     },
-    react: {
-      useSuspense: false,
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
     },
   });
 
