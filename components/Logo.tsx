@@ -16,7 +16,7 @@ const Logo = ({ className }: Props) => {
     <Link href={"/"}>
       <Image 
         src={theme === "dark" ? "/logo1.png" : "/logo.png"}
-        alt="Medican Logo"
+        alt=" CNC Logo"
         width={1000}
         height={1000}
         className={cn("w-auto h-12 object-contain", className)}
