@@ -1,0 +1,24 @@
+{
+  "common": {
+    "home": "Home",
+    "blog": "Blog",
+    "contact": "Contact",
+    "login": "Login",
+    "search": "Search",
+    "cart": "Cart",
+    "orders": "Orders"
+  },
+  "product": {
+    "addToCart": "Add to cart",
+    "outOfStock": "Out of Stock",
+    "quantity": "Quantity",
+    "subtotal": "Subtotal"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "categories": "Categories",
+    "contact": "Contact",
+    "subscribe": "Subscribe",
+    "copyright": "Copyright © 2025 Medican. All rights reserved."
+  }
+}

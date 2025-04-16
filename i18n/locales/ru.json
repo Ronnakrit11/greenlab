@@ -1,0 +1,24 @@
+{
+  "common": {
+    "home": "Главная",
+    "blog": "Блог",
+    "contact": "Контакты",
+    "login": "Войти",
+    "search": "Поиск",
+    "cart": "Корзина",
+    "orders": "Заказы"
+  },
+  "product": {
+    "addToCart": "Добавить в корзину",
+    "outOfStock": "Нет в наличии",
+    "quantity": "Количество",
+    "subtotal": "Промежуточный итог"
+  },
+  "footer": {
+    "quickLinks": "Быстрые ссылки",
+    "categories": "Категории",
+    "contact": "Контакты",
+    "subscribe": "Подписаться",
+    "copyright": "© 2025 Medican. Все права защищены."
+  }
+}

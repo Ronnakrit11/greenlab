@@ -11,6 +11,7 @@ import Link from "next/link";
 import { ListOrdered } from "lucide-react";
 import { getAllCategories, getMyOrders } from "@/sanity/helpers/queries";
 import { ThemeToggle } from "./ThemeToggle";
+import { LanguageToggle } from "./LanguageToggle";
 
 const Header = async () => {
   const user = await currentUser();
@@ -32,6 +33,7 @@ const Header = async () => {
           <SearchBar />
           <CartIcon />
           <ThemeToggle />
+          <LanguageToggle />
 
           <ClerkLoaded>
             <SignedIn>

@@ -1,0 +1,24 @@
+{
+  "common": {
+    "home": "หน้าแรก",
+    "blog": "บล็อก",
+    "contact": "ติดต่อ",
+    "login": "เข้าสู่ระบบ",
+    "search": "ค้นหา",
+    "cart": "ตะกร้า",
+    "orders": "คำสั่งซื้อ"
+  },
+  "product": {
+    "addToCart": "เพิ่มลงตะกร้า",
+    "outOfStock": "สินค้าหมด",
+    "quantity": "จำนวน",
+    "subtotal": "ยอดรวม"
+  },
+  "footer": {
+    "quickLinks": "ลิงก์ด่วน",
+    "categories": "หมวดหมู่",
+    "contact": "ติดต่อ",
+    "subscribe": "ติดตาม",
+    "copyright": "ลิขสิทธิ์ © 2025 Medican สงวนลิขสิทธิ์"
+  }
+}

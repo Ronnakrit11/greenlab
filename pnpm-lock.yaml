@@ -83,6 +83,15 @@ importers:
       eslint-plugin-react-hooks:
         specifier: 4.6.0
         version: 4.6.0(eslint@9.24.0(jiti@1.21.7))
+      i18next:
+        specifier: ^23.10.1
+        version: 23.16.8
+      i18next-browser-languagedetector:
+        specifier: ^7.2.0
+        version: 7.2.2
+      i18next-resources-to-backend:
+        specifier: ^1.2.0
+        version: 1.2.1
       lucide-react:
         specifier: ^0.468.0
         version: 0.468.0(react@19.1.0)
@@ -92,6 +101,9 @@ importers:
       next:
         specifier: 15.1.0
         version: 15.1.0(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      next-i18next:
+        specifier: ^15.2.0
+        version: 15.4.2(i18next@23.16.8)(next@15.1.0(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-i18next@14.1.3(i18next@23.16.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
       next-sanity:
         specifier: ^9.8.27
         version: 9.9.9(@emotion/is-prop-valid@1.2.2)(@sanity/client@6.28.4)(@sanity/icons@3.7.0(react@19.1.0))(@sanity/types@3.82.0(@types/react@19.1.0))(@sanity/ui@2.15.12(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.0(react@19.1.0))(react-is@18.3.1)(react@19.1.0)(styled-components@6.1.17(react-dom@19.1.0(react@19.1.0))(react@19.1.0)))(next@15.1.0(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react-is@18.3.1)(react@19.1.0)(sanity@3.82.0(@emotion/is-prop-valid@1.2.2)(@types/node@20.17.30)(@types/react@19.1.0)(jiti@1.21.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(styled-components@6.1.17(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(yaml@2.7.1))(styled-components@6.1.17(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
@@ -110,6 +122,9 @@ importers:
       react-hot-toast:
         specifier: ^2.4.1
         version: 2.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react-i18next:
+        specifier: ^14.1.0
+        version: 14.1.3(i18next@23.16.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       sanity:
         specifier: ^3.67.1
         version: 3.82.0(@emotion/is-prop-valid@1.2.2)(@types/node@20.17.30)(@types/react@19.1.0)(jiti@1.21.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(styled-components@6.1.17(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(yaml@2.7.1)
@@ -2794,6 +2809,9 @@ packages:
   '@types/hast@2.3.10':
     resolution: {integrity: sha512-McWspRw8xx8J9HurkVBfYj0xKoE25tOFlHGdx4MJ5xORQrMGZNqJhVQWaIbm6Oyla5kYOXtDiopzKRJzEOkwJw==}
 
+  '@types/hoist-non-react-statics@3.3.6':
+    resolution: {integrity: sha512-lPByRJUer/iN/xa4qpyL0qmL11DqNW81iU/IG1S3uvRUq4oKagz8VCxZjiWkumgt66YT3vOdDgZ0o32sGKtCEw==}
+
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
@@ -3485,6 +3503,9 @@ packages:
 
   core-js-compat@3.41.0:
     resolution: {integrity: sha512-RFsU9LySVue9RTwdDVX/T0e2Y6jRYWXERKElIjpuEOEnxaXffI0X7RUwVzfYLfzuLXSNJDYoRYUAmRUcyln20A==}
+
+  core-js@3.41.0:
+    resolution: {integrity: sha512-SJ4/EHwS36QMJd6h/Rg+GyR4A5xE0FSI3eZ+iBVpfqf1x0eTSg1smWLHrA+2jQThZSh97fmSgFSU8B61nxosxA==}
 
   core-util-is@1.0.2:
     resolution: {integrity: sha512-3lqz5YjWTYnW6dlDa5TLaTCcShfar1e40rmcJVwCBJC6mWlFuj0eCHIElmG1g5kyuJ/GD+8Wn4FFCcz4gJPfaQ==}
@@ -4396,6 +4417,15 @@ packages:
   humanize-list@1.0.1:
     resolution: {integrity: sha512-4+p3fCRF21oUqxhK0yZ6yaSP/H5/wZumc7q1fH99RkW7Q13aAxDeP78BKjoR+6y+kaHqKF/JWuQhsNuuI2NKtA==}
 
+  i18next-browser-languagedetector@7.2.2:
+    resolution: {integrity: sha512-6b7r75uIJDWCcCflmbof+sJ94k9UQO4X0YR62oUfqGI/GjCLVzlCwu8TFdRZIqVLzWbzNcmkmhfqKEr4TLz4HQ==}
+
+  i18next-fs-backend@2.6.0:
+    resolution: {integrity: sha512-3ZlhNoF9yxnM8pa8bWp5120/Ob6t4lVl1l/tbLmkml/ei3ud8IWySCHt2lrY5xWRlSU5D9IV2sm5bEbGuTqwTw==}
+
+  i18next-resources-to-backend@1.2.1:
+    resolution: {integrity: sha512-okHbVA+HZ7n1/76MsfhPqDou0fptl2dAlhRDu2ideXloRRduzHsqDOznJBef+R3DFZnbvWoBW+KxJ7fnFjd6Yw==}
+
   i18next@23.16.8:
     resolution: {integrity: sha512-06r/TitrM88Mg5FdUXAKL96dJMzgqLE5dv3ryBAra4KCwD9mJ4ndOTS95ZuymIGoE+2hzfdaMak2X11/es7ZWg==}
 
@@ -5075,6 +5105,15 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
+  next-i18next@15.4.2:
+    resolution: {integrity: sha512-zgRxWf7kdXtM686ecGIBQL+Bq0+DqAhRlasRZ3vVF0TmrNTWkVhs52n//oU3Fj5O7r/xOKkECDUwfOuXVwTK/g==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      i18next: '>= 23.7.13'
+      next: '>= 12.0.0'
+      react: '>= 17.0.2'
+      react-i18next: '>= 13.5.0'
+
   next-sanity@9.9.9:
     resolution: {integrity: sha512-EyPLcNjCDHlozx04mGqQvGHaJ9j82XieCgMeFfA0FsT3Q7IHj44zXttTckFphPbTCEhGuXjPKq3iALVuiJoAog==}
     engines: {node: '>=18.18'}
@@ -5549,6 +5588,19 @@ packages:
 
   react-i18next@14.0.2:
     resolution: {integrity: sha512-YOB/H1IgXveEWeTsCHez18QjDXImzVZOcF9/JroSbjYoN1LOfCoARFJUQQ8VNow0TnGOtHq9SwTmismm78CTTA==}
+    peerDependencies:
+      i18next: '>= 23.2.3'
+      react: '>= 16.8.0'
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+
+  react-i18next@14.1.3:
+    resolution: {integrity: sha512-wZnpfunU6UIAiJ+bxwOiTmBOAaB14ha97MjOEnLGac2RJ+h/maIYXZuTHlmyqQVX1UVHmU1YDTQ5vxLmwfXTjw==}
     peerDependencies:
       i18next: '>= 23.2.3'
       react: '>= 16.8.0'
@@ -9570,6 +9622,11 @@ snapshots:
     dependencies:
       '@types/unist': 2.0.11
 
+  '@types/hoist-non-react-statics@3.3.6':
+    dependencies:
+      '@types/react': 19.1.0
+      hoist-non-react-statics: 3.3.2
+
   '@types/json-schema@7.0.15': {}
 
   '@types/json5@0.0.29': {}
@@ -10317,6 +10374,8 @@ snapshots:
   core-js-compat@3.41.0:
     dependencies:
       browserslist: 4.24.4
+
+  core-js@3.41.0: {}
 
   core-util-is@1.0.2: {}
 
@@ -11449,6 +11508,16 @@ snapshots:
 
   humanize-list@1.0.1: {}
 
+  i18next-browser-languagedetector@7.2.2:
+    dependencies:
+      '@babel/runtime': 7.27.0
+
+  i18next-fs-backend@2.6.0: {}
+
+  i18next-resources-to-backend@1.2.1:
+    dependencies:
+      '@babel/runtime': 7.27.0
+
   i18next@23.16.8:
     dependencies:
       '@babel/runtime': 7.27.0
@@ -12104,6 +12173,18 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
+  next-i18next@15.4.2(i18next@23.16.8)(next@15.1.0(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-i18next@14.1.3(i18next@23.16.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0):
+    dependencies:
+      '@babel/runtime': 7.27.0
+      '@types/hoist-non-react-statics': 3.3.6
+      core-js: 3.41.0
+      hoist-non-react-statics: 3.3.2
+      i18next: 23.16.8
+      i18next-fs-backend: 2.6.0
+      next: 15.1.0(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react: 19.1.0
+      react-i18next: 14.1.3(i18next@23.16.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+
   next-sanity@9.9.9(@emotion/is-prop-valid@1.2.2)(@sanity/client@6.28.4)(@sanity/icons@3.7.0(react@19.1.0))(@sanity/types@3.82.0(@types/react@19.1.0))(@sanity/ui@2.15.12(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.0(react@19.1.0))(react-is@18.3.1)(react@19.1.0)(styled-components@6.1.17(react-dom@19.1.0(react@19.1.0))(react@19.1.0)))(next@15.1.0(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react-is@18.3.1)(react@19.1.0)(sanity@3.82.0(@emotion/is-prop-valid@1.2.2)(@types/node@20.17.30)(@types/react@19.1.0)(jiti@1.21.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(styled-components@6.1.17(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(yaml@2.7.1))(styled-components@6.1.17(react-dom@19.1.0(react@19.1.0))(react@19.1.0)):
     dependencies:
       '@portabletext/react': 3.2.1(react@19.1.0)
@@ -12600,6 +12681,15 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
 
   react-i18next@14.0.2(i18next@23.16.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      '@babel/runtime': 7.27.0
+      html-parse-stringify: 3.0.1
+      i18next: 23.16.8
+      react: 19.1.0
+    optionalDependencies:
+      react-dom: 19.1.0(react@19.1.0)
+
+  react-i18next@14.1.3(i18next@23.16.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       '@babel/runtime': 7.27.0
       html-parse-stringify: 3.0.1

@@ -6,6 +6,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import localFont from "next/font/local";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import "@/app/i18n/config";
 
 const raleway = localFont({
   src: "../fonts/Raleway.woff2",
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     creator: "@MedicanShop",
   },
   verification: {
-    google: "google-site-verification-code", // Replace with actual Google verification code
+    google: "google-site-verification-code",
   },
   category: "E-commerce",
 };
